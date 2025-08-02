@@ -1,0 +1,24 @@
+input_folder: input
+output_folder: output
+output_filename_suffix: "_processed"
+filename_format_regex: '^corporate_visits_sfp_\(([A-Za-z]{3} \d{2}_ \d{4})\)\.csv$'
+date_format: "MMM dd_ yyyy"
+valid_days:
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday
+min_time: "05:00"
+max_time: "20:00"
+entries_per_visitor:
+  CYNTIA ARENAS:
+    min: 6
+    max: 10
+  JUAN BANUELOS:
+    min: 6
+    max: 10
+ask_for_missing_entries: false
+unknown_visitor_min_entries: 6
+unknown_visitor_max_entries: 9
+can_repeat_days: false
