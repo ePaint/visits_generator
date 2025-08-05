@@ -1,8 +1,8 @@
 input_folder: input
 output_folder: output
 output_filename_suffix: "_processed"
-filename_format_regex: '^corporate_visits_sfp_\(([A-Za-z]{3} \d{2}_ \d{4})\)\.csv$'
-date_format: "MMM dd_ yyyy"
+filename_format_regex: '^corporate_visits_sfp_\(([A-Za-z]{3} \d{2}, \d{4})\)\.csv$'
+date_format: "MMM dd, yyyy"
 valid_days:
   - Monday
   - Tuesday
