@@ -7,6 +7,15 @@ try {
 }
 
 $settings = Get-Content -Path "$PSScriptRoot\settings.yaml" | ConvertFrom-Yaml
+
+if (-not (Test-Path -Path $settings.input_folder)) {
+    $settings.input_folder = Join-Path -Path $PSScriptRoot -ChildPath $settings.input_folder
+}
+
+if (-not (Test-Path -Path $settings.output_folder)) {
+    $settings.output_folder = Join-Path -Path $PSScriptRoot -ChildPath $settings.output_folder
+}
+
 $inputFiles = Get-ChildItem -Path $settings.input_folder -Filter "*.csv" | Where-Object { $_.Name -match $settings.filename_format_regex }
 if ($inputFiles.Count -eq 0) {
     Write-Host "No files found matching the pattern $($settings.filename_format_regex) in $($settings.input_folder)." -ForegroundColor Yellow
